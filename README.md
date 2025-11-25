@@ -1,4 +1,4 @@
-#  Floricultura — E-commerce de Flores
+# 🌺 Floricultura — E-commerce de Flores
 
 Sistema de e-commerce para venda de flores e arranjos, desenvolvido com **HTML, CSS e JavaScript** (Frontend) e **PHP/MySQL** (Backend).
 
