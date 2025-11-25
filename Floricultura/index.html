@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floricultura - Flores Frescas e Buquês Especiais</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-success" href="index.html">
+                <i class="bi bi-flower1 me-2"></i>
+                Floricultura
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginas/catalogo.html">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="paginas/login.html">
+                        <i class="bi bi-person me-1"></i>
+                        <span id="userStatus">Entrar</span>
+                    </a>
+                    <a class="nav-link" href="paginas/carrinho.html">
+                        <i class="bi bi-cart me-1"></i>Carrinho
+                        <span class="badge bg-success cart-count" style="display: none;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">Flores que Falam por Si</h1>
+                    <p class="lead mb-4">Descubra a beleza natural em cada pétala. Buquês exclusivos e flores frescas para todos os momentos especiais da sua vida.</p>
+                    <div class="d-flex gap-3">
+                        <a href="paginas/catalogo.html" class="btn btn-success btn-lg">
+                            Ver Catálogo Completo
+                        </a>
+                        <a href="#destaques" class="btn btn-outline-light btn-lg">
+                            Ver Destaques
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card text-center h-100">
+                        <div class="card-body p-4">
+                            <i class="bi bi-truck text-success category-icon"></i>
+                            <h5>Entrega Rápida</h5>
+                            <p class="text-muted">Entregamos em até 2 horas na região metropolitana</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card text-center h-100">
+                        <div class="card-body p-4">
+                            <i class="bi bi-flower2 text-success category-icon"></i>
+                            <h5>Flores Frescas</h5>
+                            <p class="text-muted">Trabalhamos apenas com flores da mais alta qualidade</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card text-center h-100">
+                        <div class="card-body p-4">
+                            <i class="bi bi-shield-check text-success category-icon"></i>
+                            <h5>Compra Segura</h5>
+                            <p class="text-muted">Pagamento 100% seguro com diversas opções</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaques -->
+    <section id="destaques" class="py-5 position-relative">
+        <div class="destaques-bg"></div>
+        <div class="container destaques-container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Destaques da Semana</h2>
+                <p class="lead text-muted">Os buquês mais amados pelos nossos clientes</p>
+            </div>
+            <div class="row g-4 justify-content-center" id="destaquesGrid">
+                <!-- Produtos carregados via JavaScript -->
+            </div>
+            <div class="text-center mt-5">
+                <a href="paginas/catalogo.html" class="btn btn-outline-success btn-lg px-5 py-3">
+                    Ver Todos os Produtos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorias -->
+    <section id="categorias" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Encontre a flor perfeita para cada ocasião</h2>
+                <p class="lead text-muted">Descubra nossas categorias de flores</p>
+            </div>
+            <div class="row g-4" id="categoriasGrid">
+                <!-- Categorias carregadas via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-6 fw-bold mb-4">Kflowers</h2>
+                    <p class="lead mb-4">Há mais de 5 anos levando beleza e emoção através das flores. Nossa missão é conectar pessoas através da natureza, oferecendo os melhores arranjos florais para cada momento especial.</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <h4 class="text-success">15+</h4>
+                            <p class="text-muted">Anos de Experiência</p>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="text-success">5000+</h4>
+                            <p class="text-muted">Clientes Satisfeitos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="imagens/floricultura.jfif" class="img-fluid rounded shadow" alt="Sobre Nós" style="height: 400px; width: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+   <!-- Contact Section -->
+<section id="contato" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Entre em Contato</h2>
+            <p class="lead text-muted">Tire suas dúvidas ou faça seu pedido especial</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card feature-card">
+                    <div class="card-body p-5">
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-4">
+                                <i class="bi bi-telephone text-success display-6 mb-3"></i>
+                                <h5>Telefone</h5>
+                                <p class="text-muted">(11) 9999-9999</p>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <i class="bi bi-envelope text-success display-6 mb-3"></i>
+                                <h5>Email</h5>
+                                <p class="text-muted">contato@floricultura.com</p>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <i class="bi bi-geo-alt text-success display-6 mb-3"></i>
+                                <h5>Endereço</h5>
+                                <p class="text-muted">Rua das Flores, 123 - São Paulo</p>
+                            </div>
+                        </div>
+                        <form class="mt-4" action="php/contato.php" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Seu nome *</label>
+                                    <input type="text" class="form-control" name="nome" placeholder="Seu nome completo" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Seu email *</label>
+                                    <input type="email" class="form-control" name="email" placeholder="seu@email.com" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" name="telefone" placeholder="(11) 99999-9999">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Sua mensagem *</label>
+                                <textarea class="form-control" rows="4" name="mensagem" placeholder="Sua mensagem" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">
+                                <i class="bi bi-send me-2"></i>Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-flower1 text-success me-2"></i>Floricultura</h5>
+                    <p class="mb-0">Levando beleza e emoção através das flores desde 2020.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-0">&copy; 2025 Floricultura. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Carregar destaques e categorias
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarDestaques();
+            carregarCategorias();
+            atualizarEstadoUsuario();
+            atualizarContadorCarrinho();
+        });
+
+        async function carregarDestaques() {
+            try {
+                const response = await fetch('php/produtos.php?action=destaques');
+                const produtos = await response.json();
+                
+                const grid = document.getElementById('destaquesGrid');
+                grid.innerHTML = produtos.map(produto => `
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 product-card" data-product-id="${produto.id}" data-price="${produto.preco}" data-stock="${produto.estoque}">
+                            <div class="position-relative overflow-hidden">
+                                <img src="imagens/${produto.imagem}" class="card-img-top" alt="${produto.nome}" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">${produto.nome}</h5>
+                                <p class="card-text flex-grow-1">${produto.descricao}</p>
+                                <div class="d-flex justify-content-between align-items-center mt-auto">
+                                    <div>
+                                        <span class="h5 text-success product-price">R$ ${produto.preco}</span>
+                                        <div class="mt-1">
+                                            <small class="product-stock">Estoque: ${produto.estoque}</small>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-success add-to-cart" onclick="adicionarAoCarrinho(${produto.id})">
+                                        <i class="bi bi-cart-plus me-1"></i>Comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Erro ao carregar destaques:', error);
+            }
+        }
+
+        async function carregarCategorias() {
+            try {
+                const response = await fetch('php/produtos.php?action=categorias');
+                const categorias = await response.json();
+                
+                const grid = document.getElementById('categoriasGrid');
+                grid.innerHTML = categorias.map(categoria => `
+                    <div class="col-md-3">
+                        <div class="card feature-card text-center">
+                            <div class="card-body p-4">
+                                <h5>${categoria.nome}</h5>
+                                <p class="text-muted">${categoria.descricao}</p>
+                                <a href="paginas/catalogo.html?categoria=${categoria.id}" class="btn btn-outline-success btn-sm">Ver ${categoria.nome}</a>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Erro ao carregar categorias:', error);
+            }
+        }
+
+        function atualizarEstadoUsuario() {
+            // Verificar se usuário está logado (simulação)
+            const userStatus = document.getElementById('userStatus');
+            const usuarioLogado = localStorage.getItem('usuarioLogado');
+            
+            if (usuarioLogado) {
+                userStatus.textContent = JSON.parse(usuarioLogado).nome;
+            }
+        }
+
+        async function atualizarContadorCarrinho() {
+            try {
+                const response = await fetch('php/carrinho.php?action=get');
+                const data = await response.json();
+                
+                if (data.success) {
+                    const cartCount = document.querySelector('.cart-count');
+                    cartCount.textContent = data.total_itens;
+                    cartCount.style.display = data.total_itens > 0 ? 'inline' : 'none';
+                }
+            } catch (error) {
+                console.error('Erro ao atualizar carrinho:', error);
+            }
+        }
+
+        async function adicionarAoCarrinho(produtoId) {
+            try {
+                const formData = new FormData();
+                formData.append('action', 'add');
+                formData.append('produto_id', produtoId);
+                formData.append('quantidade', 1);
+
+                const response = await fetch('php/carrinho.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert(result.message);
+                    atualizarContadorCarrinho();
+                } else {
+                    alert('Erro: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Erro ao adicionar ao carrinho:', error);
+                alert('Erro ao adicionar produto ao carrinho');
+            }
+        }
+    </script>
+</body>
+</html>

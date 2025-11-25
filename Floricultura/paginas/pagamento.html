@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Floricultura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="bi bi-flower1 text-success"></i>
+                Floricultura
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="catalogo.html">
+                    <i class="bi bi-grid"></i> Catálogo
+                </a>
+                <a class="nav-link" href="login.html">
+                    <i class="bi bi-person"></i> Entrar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2 class="mb-4">Finalizar Pedido</h2>
+        
+        <!-- Etapas do Processo -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-md-3 etapa ativa">
+                        <div class="etapa-numero">1</div>
+                        <span>Endereço</span>
+                    </div>
+                    <div class="col-md-3 etapa inativa">
+                        <div class="etapa-numero">2</div>
+                        <span>Pagamento</span>
+                    </div>
+                    <div class="col-md-3 etapa inativa">
+                        <div class="etapa-numero">3</div>
+                        <span>Confirmação</span>
+                    </div>
+                    <div class="col-md-3 etapa inativa">
+                        <div class="etapa-numero">4</div>
+                        <span>Concluído</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Endereço de Entrega -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Endereço de Entrega</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="enderecoForm">
+                            <div class="row mb-3">
+                                <div class="col-md-8">
+                                    <label class="form-label">CEP *</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" required>
+                                        <button type="button" class="btn btn-outline-secondary" onclick="buscarCEP()">
+                                            <i class="bi bi-search"></i> Buscar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-8">
+                                    <label class="form-label">Rua *</label>
+                                    <input type="text" class="form-control" id="rua" name="rua" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Número *</label>
+                                    <input type="text" class="form-control" id="numero" name="numero" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Complemento</label>
+                                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apto, Bloco, etc.">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Bairro *</label>
+                                    <input type="text" class="form-control" id="bairro" name="bairro" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Cidade *</label>
+                                    <input type="text" class="form-control" id="cidade" name="cidade" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Estado *</label>
+                                    <select class="form-select" id="estado" name="estado" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-success" onclick="salvarEndereco()">
+                                <i class="bi bi-check-lg"></i> Salvar Endereço
+                            </button>
+                        </form>
+                        
+                        <div id="enderecoSalvo" class="mt-3" style="display: none;">
+                            <div class="alert alert-success">
+                                <h6>Endereço Salvo:</h6>
+                                <p id="enderecoCompleto" class="mb-0"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Métodos de Pagamento (será habilitado após salvar endereço) -->
+                <div class="card mb-4" id="pagamentoSection" style="display: none;">
+                    <div class="card-header">
+                        <h5 class="mb-0">Escolha a forma de pagamento</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="cartao" value="cartao" checked onchange="mostrarFormaPagamento('cartao')">
+                                <label class="form-check-label" for="cartao">
+                                    <i class="bi bi-credit-card"></i> Cartão de Crédito
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Cartão de Crédito -->
+                        <div id="cartaoSection" class="payment-section active">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Número do Cartão *</label>
+                                    <input type="text" class="form-control" id="numeroCartao" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Nome no Cartão *</label>
+                                    <input type="text" class="form-control" id="nomeCartao" placeholder="Seu nome completo" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label class="form-label">Validade *</label>
+                                    <input type="text" class="form-control" id="validadeCartao" placeholder="MM/AA" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">CVV *</label>
+                                    <input type="text" class="form-control" id="cvvCartao" placeholder="123" maxlength="3" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Parcelas *</label>
+                                    <select class="form-select" id="parcelasCartao" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="1">1x R$ <span id="parcela1"></span></option>
+                                        <option value="2">2x R$ <span id="parcela2"></span></option>
+                                        <option value="3">3x R$ <span id="parcela3"></span></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="pix" value="pix" onchange="mostrarFormaPagamento('pix')">
+                                <label class="form-check-label" for="pix">
+                                    <i class="bi bi-qr-code"></i> PIX
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- PIX -->
+                        <div id="pixSection" class="payment-section">
+                            <div class="qr-code-container">
+                                <h6>Pague com PIX</h6>
+                                <p class="text-muted">Escaneie o QR Code abaixo ou copie o código PIX</p>
+                                
+                                <div class="qr-code" id="qrCodePix">
+                                    <!-- QR Code será gerado aqui -->
+                                    <div class="text-center">
+                                        <i class="bi bi-qr-code display-4 text-muted"></i>
+                                        <br>
+                                        <small>QR Code será gerado</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="pix-code">
+                                    <strong>Código PIX:</strong>
+                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                        <code id="codigoPix">00020126580014br.gov.bcb.pix0136...</code>
+                                        <button class="btn btn-sm btn-outline-success copy-btn ms-2" onclick="copiarCodigoPix()">
+                                            <i class="bi bi-clipboard"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-success" onclick="verificarPagamentoPix()">
+                                    <i class="bi bi-check-circle"></i> Já efetuei o pagamento PIX
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="boleto" value="boleto" onchange="mostrarFormaPagamento('boleto')">
+                                <label class="form-check-label" for="boleto">
+                                    <i class="bi bi-upc-scan"></i> Boleto Bancário
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Boleto -->
+                        <div id="boletoSection" class="payment-section">
+                            <div class="boleto-container">
+                                <h6>Boleto Bancário</h6>
+                                <p class="text-muted">O boleto será gerado com vencimento em 3 dias úteis</p>
+                                
+                                <div class="alert alert-warning">
+                                    <small>
+                                        <i class="bi bi-exclamation-triangle"></i>
+                                        <strong>Atenção:</strong> O pedido só será processado após a confirmação do pagamento do boleto.
+                                    </small>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Código do Boleto:</label>
+                                    <div class="d-flex">
+                                        <input type="text" class="form-control" id="codigoBoleto" readonly value="23793.39128 60000.000000 00000.001009 9 00000000000000">
+                                        <button class="btn btn-outline-success copy-btn ms-2" onclick="copiarCodigoBoleto()">
+                                            <i class="bi bi-clipboard"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Vencimento:</label>
+                                            <input type="text" class="form-control" id="vencimentoBoleto" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Valor:</label>
+                                            <input type="text" class="form-control" id="valorBoleto" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-outline-success w-100" onclick="verificarPagamentoBoleto()">
+                                    <i class="bi bi-check-circle"></i> Já paguei o boleto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <!-- Resumo do Pedido -->
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Resumo do Pedido</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Número do Pedido:</span>
+                            <span class="fw-bold" id="numeroPedido">-</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Status:</span>
+                            <span class="badge bg-warning" id="statusPedido">Pendente</span>
+                        </div>
+                        <hr>
+                        <div id="itensPedido">
+                            <!-- Itens do pedido carregados via JavaScript -->
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal:</span>
+                            <span id="resumoSubtotal">R$ 0,00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Frete:</span>
+                            <span id="resumoFrete">R$ 0,00</span>
+                        </div>
+                        <div class="d-flex justify-content-between fw-bold fs-5">
+                            <span>Total:</span>
+                            <span id="resumoTotal">R$ 0,00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão de Confirmação -->
+                <div class="card">
+                    <div class="card-body">
+                        <button class="btn btn-success w-100 mb-3" id="confirmPayment" onclick="processarPagamento()" disabled>
+                            Confirmar Pagamento
+                        </button>
+                        <div class="text-center">
+                            <small class="text-muted">
+                                <i class="bi bi-shield-check"></i>
+                                Pagamento 100% seguro
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
